@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">JavierSanchezCerrato</string>
+    <string name="txt_Ingresar">Ingresar letra</string>
+    <string name="btn_Nuevo">+</string>
+</resources>
