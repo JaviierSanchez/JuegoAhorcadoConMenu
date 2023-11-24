@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/verPalabra"
+        android:title="Ver palabra"
+        android:onClick="verPalabra"></item>
+
+    <item
+        android:id="@+id/añadirPalabra"
+        android:title="Añadir palabra"
+        android:onClick="añadirPalabra"></item>
+
+    <item
+        android:id="@+id/mostrarPalabra"
+        android:title="Mostrar Palabra"
+        android:onClick="mostrarPalabra"></item>
+
+    <item
+        android:id="@+id/salir"
+        android:title="Salir"
+        android:onClick="salir"></item>
+
+
+
+</menu>

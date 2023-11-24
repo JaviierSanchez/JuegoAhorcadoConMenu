@@ -1,8 +1,12 @@
 package com.example.javiersanchezcerrato;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         tvIntentos = findViewById(R.id.intentos);
         tvPalabra = findViewById(R.id.palabra);
         etLetra = findViewById(R.id.letra);
+
+
     }
 
     public void nuevo(View vista) {
@@ -72,5 +78,57 @@ public class MainActivity extends AppCompatActivity {
             palabraMostrada.append(" "); // Agrega un espacio después de cada letra o guión bajo.
         }
         tvPalabra.setText(palabraMostrada.toString().trim()); // Quita el espacio al final.
+    }
+
+    public void verPalabra(MenuItem itemm){
+        if (citySelect != null) {
+            Toast.makeText(this, "Palabra a adivinar: " + citySelect, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Primero debes empezar un nuevo juego", Toast.LENGTH_SHORT).show();
+        }
+
+
+
+
+
+    }
+
+    public void añadirPalabra(MenuItem item){
+
+        //AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        //builder.setTitle("Añadir Palabra")
+
+
+    }
+
+    public void mostrarPalabra(MenuItem item){
+
+        Intent i = new Intent(this, MostrarPalabras.class);
+        i.putExtra("resultado",ciudades);
+
+        startActivity(i);
+
+
+    }
+
+    public void salir(MenuItem item){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Salir")
+                .setMessage("¿Quieres salir de la aplicacion?")
+                .setPositiveButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .setNegativeButton("Salir", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
     }
 }
